@@ -8,26 +8,13 @@ import {
 
 //var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
-var Weekdays = React.createClass({
-  render(){
+//var Weekdays = React.createClass({
+class Weekdays extends React.Component {
   
-
-    return ( 
-      <View style={styles.container}>
-        <Text>
-          Today is: {Moment().format('ddd')}
-        </Text>
-        <Text style={styles.textStyle}>
-          Days of the Week:
-        </Text>
-        {this.dayList()}
-      </View>
-    )
-  },
-  dayList: function() {
-    var daysItems = [];
+  dayList() {
+    const daysItems = [];
     for(var i=0; i<7; i++){
-      var day = Moment().add(i, 'days').format('dddd');
+      const day = Moment().add(i, 'days').format('dddd');
       daysItems.push(
         <DayItem day={day} daysUntil={i} />
       )
@@ -36,7 +23,22 @@ var Weekdays = React.createClass({
     //return days.map(day => <DayItem day={day} />
     //);
   } 
-});
+
+  render(){
+  
+    return ( 
+      <View style={styles.container}>
+        <Text>
+          Today is: {Moment().format('ddd')}
+        </Text>
+        <Text style={styles.textStyle}>
+          Days of the Week Starting with Today:
+        </Text>
+        {this.dayList()}
+      </View>
+    )
+  }
+};
 
 // Style the react component
 var styles = StyleSheet.create({
