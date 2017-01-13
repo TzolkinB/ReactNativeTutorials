@@ -9,12 +9,13 @@ module.exports = function(latitude, longitude) {
   //vanilla JS would be rootUrl + '&lat' + latitude + '&lon' + longitude
   
   return fetch(url) //returns a promise
-    .then(function(response){
+    .then((response) => {
       return response.json();
     }).catch(function(err){
       return err;
     })
     .then(function(json){
+      console.log(json);
       return {
         city: json.name,
         temperature: kelvinToF(json.main.temp),
