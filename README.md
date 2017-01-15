@@ -1,6 +1,7 @@
 # React Native Tutorials
-  *(from Build Apps with React Native - Stephen Grider)
-    * https://github.com/StephenGrider/ReactNativeCasts
+[Build Apps with React Native - Stephen Grider](https://stacksocial.com/sales/build-apps-with-react-native)
+* Stephen Grider's github repo of the course: *https://github.com/StephenGrider/ReactNativeCasts*
+
 1. Weekdays App - list days of the week starting with the current day
   * uses Moment
 2. Stopwatch App - has a Start/Stop, Lap, and Clear button. When "Lap" is pressed, the time intervals are listed below the buttons
@@ -8,4 +9,8 @@
 3. WeatherMan App - uses MapView with a pin to tell the user the current local
 weather
   * uses openweathermap.org API
+  
+[Build a React Native Todo Application] (https://egghead.io/courses/build-a-react-native-todo-application)
+
+1. ToDo App
 
