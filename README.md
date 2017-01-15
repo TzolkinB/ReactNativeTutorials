@@ -1,5 +1,11 @@
-# ReactNativeTutorials
+# React Native Tutorials
+  *(from Build Apps with React Native - Stephen Grider)
+    * https://github.com/StephenGrider/ReactNativeCasts
 1. Weekdays App - list days of the week starting with the current day
-  * uses React Native and Moment
+  * uses Moment
 2. Stopwatch App - has a Start/Stop, Lap, and Clear button. When "Lap" is pressed, the time intervals are listed below the buttons
-  * uses React Native, Moment, and minutes-seconds-milliseconds
+  * uses minutes-seconds-milliseconds
+3. WeatherMan App - uses MapView with a pin to tell the user the current local
+weather
+  * uses openweathermap.org API
+
