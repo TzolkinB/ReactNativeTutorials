@@ -22,8 +22,8 @@ class Row extends Component {
     )
 
     const removeButton = (
-      <TouchableOpacity onPress={this.props.onRemove}>
-        <FontAwesome name='trash' />
+      <TouchableOpacity style={styles.remove} onPress={this.props.onRemove}>
+        <FontAwesome name='trash' size={20} color="#cc0000" />
       </TouchableOpacity>
     )
 
@@ -40,10 +40,8 @@ class Row extends Component {
     )
 
     const saveButton = (
-      <TouchableOpacity 
-        style={styles.done}
-        onPress={() => this.props.onToggleEdit(false)}>
-        <Text style={styles.doneText}>Save</Text>
+      <TouchableOpacity style={styles.done} onPress={() => this.props.onToggleEdit(false)}>
+        <FontAwesome name='floppy-o' size={20} color="#fff" />
       </TouchableOpacity> 
     )
     
@@ -53,8 +51,10 @@ class Row extends Component {
           value={complete}
           onValueChange={this.props.onComplete}
         />
-        {this.props.editing ? textEdit : textView}
-        {this.props.editing ? saveButton : removeButton}
+        <View style={!this.props.editing ? styles.center : styles.blank}>
+          {this.props.editing ? textEdit : textView}
+          {this.props.editing ? saveButton : removeButton}
+        </View>
       </View>
     );
   }
@@ -80,9 +80,8 @@ const styles = StyleSheet.create({
   },
   done: {
     borderRadius: 5,
-    borderWidth: 1,
-    borderColor: "#7be290",
-    padding: 7
+    backgroundColor: "#77b300",
+    padding: 5
   },
   doneText: {
     color: "#4d4d4d",
@@ -95,9 +94,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "#4d4d4d",
   },
-  remove: {
-    fontSize: 20,
-    color: "#cc9a9a"
+  center: {
+    flex: 1,
+    paddingTop: 5,
+    flexDirection: "row",
+  },
+  blank: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "flex-start"
   }
 })
 
